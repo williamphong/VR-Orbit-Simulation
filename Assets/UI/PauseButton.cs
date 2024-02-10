@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PauseButton : MonoBehaviour
 {
+    public GameObject masterControl;
+    SimulationController simuControl;
 
-    public GameObject earth;
-    TimeOrbit earthOrbit;
     public bool paused = false;
+    public float speedStorage = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
-        earthOrbit = earth.GetComponent<TimeOrbit>();
+        simuControl = masterControl.GetComponent<SimulationController>();
     }
 
     // Update is called once per frame
@@ -22,17 +24,18 @@ public class PauseButton : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        string myname = other.gameObject.name;
-        Debug.Log("I was touched by " + myname + "with tag " + other.gameObject.tag);
+        //string myname = other.gameObject.name;
+        //Debug.Log("I was touched by " + myname + "with tag " + other.gameObject.tag);
 
         if (other.gameObject.name.Contains("Hand") && paused == false)
         {
-            earthOrbit.orbitSpeed = 0f;
+            speedStorage = simuControl.simulationSpeed;
+            simuControl.simulationSpeed = 0f;
             paused = true;
         }
         else if (other.gameObject.name.Contains("Hand") && paused == true)
         {
-            earthOrbit.orbitSpeed = 0.5f;
+            simuControl.simulationSpeed = speedStorage;
             paused = false;
         }
     }
