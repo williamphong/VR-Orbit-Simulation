@@ -20,7 +20,6 @@ public class Lecture1 : MonoBehaviour
     bool lectureOn = false;
     Vector3 playerPositionStorage;
     Vector3 podiumPositionStorage;
-    //Quaternion podiumRotationStorage;
     float speedStorage;
 
     public GameObject tvScreen; // Mapped to the TV Screen In-Game
@@ -50,7 +49,7 @@ public class Lecture1 : MonoBehaviour
 
         if (other.gameObject.name.Contains("Hand") && lectureOn == false)
         {
-            //speedStorage = simuControl.simulationSpeed;
+            speedStorage = simuControl.simulationSpeed;
             //playerPositionStorage = player.transform.position;
             //podiumPositionStorage = transform.parent.transform.position;
             //podiumRotationStorage = transform.parent.transform.rotation;
