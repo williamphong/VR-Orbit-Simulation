@@ -23,6 +23,8 @@ public class Lecture1 : MonoBehaviour
     //Quaternion podiumRotationStorage;
     float speedStorage;
 
+    public GameObject tvScreen; // Mapped to the TV Screen In-Game
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,9 @@ public class Lecture1 : MonoBehaviour
         lecturer = GetComponent<AudioSource>();
         focusRender = focus.GetComponent<Renderer>();
         orbitRender = orbitTrail.GetComponent<Renderer>();
+
+        if(tvScreen != null) // Start with TV screen off
+            {tvScreen.SetActive(false);}
     }
 
     // Update is called once per frame
@@ -37,7 +42,7 @@ public class Lecture1 : MonoBehaviour
     {
 
     }
-
+   
     void OnCollisionEnter(Collision other)
     {
         //string myname = other.gameObject.name;
@@ -45,16 +50,17 @@ public class Lecture1 : MonoBehaviour
 
         if (other.gameObject.name.Contains("Hand") && lectureOn == false)
         {
-            speedStorage = simuControl.simulationSpeed;
-            playerPositionStorage = player.transform.position;
-            podiumPositionStorage = transform.parent.transform.position;
+            //speedStorage = simuControl.simulationSpeed;
+            //playerPositionStorage = player.transform.position;
+            //podiumPositionStorage = transform.parent.transform.position;
             //podiumRotationStorage = transform.parent.transform.rotation;
 
             simuControl.simulationSpeed = 30f;
-            player.transform.position = new Vector3(20f, 55f, -60f);
-            transform.parent.transform.position = new Vector3(19.3f, 55.5f, -59f);
+            //player.transform.position = new Vector3(20f, 55f, -60f);
+            //transform.parent.transform.position = new Vector3(19.3f, 55.5f, -59f);
 
             lecturer.Play();
+            tvScreen.SetActive(true); //Turn On TV when button is pressed
             focusRender.enabled = true;
             orbitRender.enabled = true;
             lectureOn = true;
@@ -63,11 +69,12 @@ public class Lecture1 : MonoBehaviour
         else if (other.gameObject.name.Contains("Hand") && lectureOn == true)
         {
             simuControl.simulationSpeed = speedStorage;
-            player.transform.position = playerPositionStorage;
-            transform.parent.transform.position = podiumPositionStorage;
+            //player.transform.position = playerPositionStorage;
+            //transform.parent.transform.position = podiumPositionStorage;
             focusRender.enabled = false;
 
             lecturer.Stop();
+            tvScreen.SetActive(false); //Turn off TV when button is pressed again
             focusRender.enabled = false;
             orbitRender.enabled = false;
             lectureOn = false;
