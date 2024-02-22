@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lecture1 : MonoBehaviour
+public class Lecture2 : MonoBehaviour
 {
     public GameObject masterControl;
     SimulationController simuControl;
@@ -23,8 +23,6 @@ public class Lecture1 : MonoBehaviour
     //Quaternion podiumRotationStorage;
     float speedStorage;
 
-    public GameObject tvScreen;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +30,6 @@ public class Lecture1 : MonoBehaviour
         lecturer = GetComponent<AudioSource>();
         focusRender = focus.GetComponent<Renderer>();
         orbitRender = orbitTrail.GetComponent<Renderer>();
-
-        if(tvScreen != null) // Start with TV screen off
-            {tvScreen.SetActive(false);}
     }
 
     // Update is called once per frame
@@ -42,7 +37,7 @@ public class Lecture1 : MonoBehaviour
     {
 
     }
-   
+
     void OnCollisionEnter(Collision other)
     {
         //string myname = other.gameObject.name;
@@ -60,7 +55,6 @@ public class Lecture1 : MonoBehaviour
             //transform.parent.transform.position = new Vector3(19.3f, 55.5f, -59f);
 
             lecturer.Play();
-            tvScreen.SetActive(true); //Turn On TV when button is pressed
             focusRender.enabled = true;
             orbitRender.enabled = true;
             lectureOn = true;
@@ -74,7 +68,6 @@ public class Lecture1 : MonoBehaviour
             focusRender.enabled = false;
 
             lecturer.Stop();
-            tvScreen.SetActive(false); //Turn off TV when button is pressed again
             focusRender.enabled = false;
             orbitRender.enabled = false;
             lectureOn = false;
