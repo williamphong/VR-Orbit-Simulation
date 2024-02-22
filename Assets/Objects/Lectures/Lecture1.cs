@@ -23,7 +23,7 @@ public class Lecture1 : MonoBehaviour
     //Quaternion podiumRotationStorage;
     float speedStorage;
 
-    public GameObject tvScreen;
+    public GameObject tvScreen; // Mapped to the TV Screen In-Game
 
     // Start is called before the first frame update
     void Start()
