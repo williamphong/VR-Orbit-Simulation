@@ -3,8 +3,8 @@ using System.Globalization;
 
 public class TimeConverter
 {
-    //Converts a datetime string to a double representing the number of days since Jan 1, 1970,
-    //and to an integer representing the number of seconds since Jan 1, 1970
+    //Converts a datetime string to a double representing the number of days since Jan 1, 1970, to an integer
+    //representing the number of seconds 
     public static (double, long) ToFloat(string datetimeStr)
     {
         DateTime epoch = new DateTime(1970, 1, 1);
@@ -32,12 +32,11 @@ public class TimeConverter
         {
             resultDateTime = epoch.AddSeconds(value);
         }
-        
         return resultDateTime.ToString("MM/dd/yyyy:HH:mm:ss");
     }
 }
 
-// Example Usage
+/*example use 
 public class Program
 {
     public static void Main()
@@ -54,3 +53,4 @@ public class Program
         Console.WriteLine($"From Seconds: {fromSeconds}");
     }
 }
+*/
