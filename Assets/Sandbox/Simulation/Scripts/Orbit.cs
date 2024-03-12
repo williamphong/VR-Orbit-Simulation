@@ -22,12 +22,9 @@ public class Orbit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime * simuControl.simulationSpeed;
 
-        transform.localPosition = getPosition(currentTime);
+        transform.localPosition = getPosition(simuControl.currentTime);
 
-        if (currentTime >= orbitDuration) currentTime = 0;
-        
     }
 
 
