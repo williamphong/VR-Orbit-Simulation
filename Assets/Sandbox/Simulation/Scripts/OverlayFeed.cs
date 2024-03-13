@@ -15,7 +15,7 @@ public class OverlayFeed : MonoBehaviour
         // default constants 
         double AU = 149.597870700; // in millions of km, 2013 Selected Astronomical Constants, from the online Astronomical Almanac at http://asa.usno.navy.mil/, section K
         double a = 1.00000261 * 149.597870700; // (Standish, E. Myles; Williams, James C.. "Orbital Ephemerides of the Sun, Moon, and Planets" (PDF). International Astronomical Union Commission 4: (Ephemerides).
-        double eccentricity = 0.01670236225492288; // Laskar 2004 solution for J2000.0 (year 0  for him)
+        public double eccentricity = 0.01670236225492288; // Laskar 2004 solution for J2000.0 (year 0  for him)
         double obliquity = 0.4090928042223415; //radians, %Laskar 2004 solution for J2000.0 (year 0  for him)
         double precession = Mathf.PI - 1.796256991128036; //radians, Laskar 2004 solution for J2000.0 (year 0  for him); complementary angle calculated here for internal use only
         double mean_anomaly = 90; //in degrees, CCW from perihelion, tied to time passage and via Kpler's II lawto true anomaly

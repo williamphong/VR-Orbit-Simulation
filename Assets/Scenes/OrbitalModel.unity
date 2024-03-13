@@ -1246,6 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd9e5fe9d62e6f418aa8d345d9d021d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eccentricity: 0.01670236225492288
   overlay: {fileID: 525300761}
   masterControl: {fileID: 2081311512}
 --- !u!4 &1639768768 stripped
@@ -1601,6 +1602,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1066110513}
     m_Modifications:
+    - target: {fileID: 487989971023326862, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
+      propertyPath: dataFeed
+      value: 
+      objectReference: {fileID: 1545494206}
+    - target: {fileID: 487989971023326862, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
+      propertyPath: constantOrbit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 487989971023326862, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
       propertyPath: masterControl
       value: 
