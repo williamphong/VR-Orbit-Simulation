@@ -29,7 +29,7 @@ This section will define common terms and phrases used throughout the project an
     - Forward Keplerian (keplerian): Provided an orbital period (in our case, 365.256363 days), eccentricity (eccen), and eccentric anomaly (true_anomaly), return the mean anomaly
       - Eccentric Anomaly:
       - Mean Anomaly:
-      - ![credit: wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Mean_anomaly_diagram.png/520px-Mean_anomaly_diagram.png])
+      - ![credit: wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Mean_anomaly_diagram.png/520px-Mean_anomaly_diagram.png)
      
     - Inverse Keplerian (inverse_keplerian): Provided eccentricity (eccen), mean anomaly (mean_anomaly), return the true anomaly
  
