@@ -16,6 +16,27 @@ insert images and gifs
 
 somethingsomething unity steam vr 
 
+## Definitions
+
+This section will define common terms and phrases used throughout the project and research paper. Common variable names referring to the terms within the code will be written as (variable).
+
+- Milankovitch cycles describe the changes in Earth's orbit over time and are defined in three variables
+    - Eccentricity (eccen): How much the Earth's orbit deviates from a circle to an oval
+    - Obliquity (obliq): The angle of Earth as it moves along the orbit
+    - Longitude of perihelion (omega_bar): spatial angle from vernal equinox to perihelion in degrees with sun as angle vertex
+ 
+- Kepler's equations describe Earth's position on an orbit in relation to the Milankovitch parameters
+    - Forward Keplerian (keplerian): Provided an orbital period (in our case, 365.256363 days), eccentricity (eccen), and eccentric anomaly (true_anomaly), return the mean anomaly
+      - Eccentric Anomaly:
+      - Mean Anomaly:
+      - ![credit: wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Mean_anomaly_diagram.png/520px-Mean_anomaly_diagram.png])
+     
+    - Inverse Keplerian (inverse_keplerian): Provided eccentricity (eccen), mean anomaly (mean_anomaly), return the true anomaly
+ 
+- Solar Declination: angle between the Sun’s rays and the plane of the Earth’s equator
+- Solar Insolation: incoming solar radiation from the Sun at the top of Earth’s atmosphere (TOA) measured by Watt/square meter (Fo)
+
+
 ## Documentation
 This section contains a brief overview of the scripts written in this project.
 
