@@ -25,6 +25,7 @@ public class Spin : MonoBehaviour {
 	{
 		if (direction < 1f) direction += Time.deltaTime * simuControl.simulationSpeed / (directionChangeSpeed / 2);
 
-		if (spinning) transform.Rotate(Vector3.up, (360/rotationDuration) * Time.deltaTime * simuControl.simulationSpeed);
+		if (spinning) transform.Rotate(Vector3.up, -(360 / rotationDuration) * Time.deltaTime * simuControl.simulationSpeed);
+
 	}
 }
