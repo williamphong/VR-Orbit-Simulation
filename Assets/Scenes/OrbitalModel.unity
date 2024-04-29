@@ -1944,10 +1944,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4512893446724369202, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4512893446724369202, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
       propertyPath: masterControl
       value: 
       objectReference: {fileID: 2081311512}
@@ -1963,8 +1959,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4512893446724369202, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4730143336527838376, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
@@ -1974,32 +1969,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6785530687216576402, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 360835283}
-    - targetCorrespondingSourceObject: {fileID: 4600423118723370265, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7018079652739777068}
   m_SourcePrefab: {fileID: 100100000, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
---- !u!1 &7018079652739777067 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4600423118723370265, guid: 6bda14c3841e05746ba77ce8f6f04d5f, type: 3}
-  m_PrefabInstance: {fileID: 7018079652739777066}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7018079652739777068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7018079652739777067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34c20de9ecc8bde41b5ed3a66a8071a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spinning: 1
-  rotationDuration: 29.5
-  masterControl: {fileID: 2081311512}
-  direction: 1
-  directionChangeSpeed: 2
 --- !u!1001 &8179839206513413499
 PrefabInstance:
   m_ObjectHideFlags: 0
