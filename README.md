@@ -14,7 +14,12 @@ insert images and gifs
 
 ## Installation
 
-somethingsomething unity steam vr 
+### Developers
+The source code can be found in releases as a .zip or downloaded through the github repository. The project can be imported and opened in Unity.
+
+### Users
+
+The executable can be found in releases, and the demo can be used by running the executable.
 
 ## Definitions
 
