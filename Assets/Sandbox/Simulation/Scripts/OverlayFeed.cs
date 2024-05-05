@@ -9,7 +9,6 @@ using System.Numerics;
 using GenerateRotation;
 using TimeConversion;
 using TMPro;
-using TinyGiantStudio.Text;
 
 public class OverlayFeed : MonoBehaviour
 {
@@ -35,13 +34,10 @@ public class OverlayFeed : MonoBehaviour
 
 
     private string textToDisplay = "";
-    public Modular3DText Dailyoverlay;
-    public Modular3DText Yearoverlay;
+    public TMP_Text overlay;
 
     public GameObject masterControl;
     SimulationController simuControl;
-
-    int checkYear = 0;
 
     void Start()
     {
@@ -50,56 +46,39 @@ public class OverlayFeed : MonoBehaviour
 
     void Update()
     {
-        Dailyoverlay.UpdateText("Current Date: " + simuControl.dateRead());
-
-        
+        textToDisplay = "";
 
 
         textToDisplay += "Current Date: " + simuControl.dateRead();
 
-        checkYear = simuControl.getYear();
+        year = simuControl.getYear();
 
-        if (checkYear != year)
-        {
-            year = checkYear;
-            StartCoroutine(updateYear());
-        }
+        BergerSol.CalculateOrbitalParameters(year, out eccentricity, out obliquity, out longitudePerihelion);
+        textToDisplay += "\nBerger's Solution --------------------";
+        textToDisplay += "\nEccentricity (dimensionless): " + eccentricity;
+        textToDisplay += "\nObliquity (degrees): " + obliquity;
+        textToDisplay += "\nLongitude of Perihelion (degrees): " + longitudePerihelion;
 
-        IEnumerator updateYear()
-        {
-            textToDisplay = "";
+        KeplerianSolver.keplerian_inverse(eccentricity, mean_anomaly, out true_anomaly);
+        textToDisplay += "\n\nInverse Keplerian -----------------";
+        textToDisplay += "\nTrue anomaly (in radians): " + true_anomaly + " in deg: " + true_anomaly*Mathf.PI/180;
 
-            BergerSol.CalculateOrbitalParameters(year, out eccentricity, out obliquity, out longitudePerihelion);
-            textToDisplay += "\nBerger's Solution --------------------";
-            textToDisplay += "\nEccentricity (dimensionless): " + eccentricity;
-            textToDisplay += "\nObliquity (degrees): " + obliquity;
-            textToDisplay += "\nLongitude of Perihelion (degrees): " + longitudePerihelion;
+        KeplerianSolver.keplerian(T, eccentricity, true_anomaly, out t, out mean_anomaly);
+        textToDisplay += "\n\nKeplerian -----------------";
+        textToDisplay += "\nPeriod of time elapsed since last periapsis passage: " + t;
+        textToDisplay += "\nMean anomaly (in radians): " + mean_anomaly + " in deg: " + mean_anomaly*Mathf.PI/180;
 
-            KeplerianSolver.keplerian_inverse(eccentricity, mean_anomaly, out true_anomaly);
-            textToDisplay += "\n\nInverse Keplerian -----------------";
-            textToDisplay += "\nTrue anomaly (in radians): " + true_anomaly + " in deg: " + true_anomaly * Mathf.PI / 180;
+        SeasonsCalc.CalculateSeasonLengths(T, eccentricity, precession, out winter_len, out spring_len, out summer_len, out fall_len);
 
-            KeplerianSolver.keplerian(T, eccentricity, true_anomaly, out t, out mean_anomaly);
-            textToDisplay += "\n\nKeplerian -----------------";
-            textToDisplay += "\nPeriod of time elapsed since last periapsis passage: " + t;
-            textToDisplay += "\nMean anomaly (in radians): " + mean_anomaly + " in deg: " + mean_anomaly * Mathf.PI / 180;
+        textToDisplay += "\n\nNorthern Hemisphere Seasons Lengths (days) -----------------";
+        textToDisplay += "\nSpring Length: " + spring_len;
+        textToDisplay += "\nSummer Length: " + summer_len;
+        textToDisplay += "\nFall Length: " + fall_len;
+        textToDisplay += "\nWinter Length: " + winter_len;
 
-            SeasonsCalc.CalculateSeasonLengths(T, eccentricity, precession, out winter_len, out spring_len, out summer_len, out fall_len);
+        textToDisplay += "\n\nTrue solar longitude: " + (true_anomaly + longitudePerihelion) % 360;
 
-            textToDisplay += "\n\nNorthern Hemisphere Seasons Lengths (days) -----------------";
-            textToDisplay += "\nSpring Length: " + spring_len;
-            textToDisplay += "\nSummer Length: " + summer_len;
-            textToDisplay += "\nFall Length: " + fall_len;
-            textToDisplay += "\nWinter Length: " + winter_len;
-
-            textToDisplay += "\n\nTrue solar longitude: " + (true_anomaly + longitudePerihelion) % 360;
-
-            Yearoverlay.UpdateText(textToDisplay);
-
-            yield return new WaitForSeconds(1);
-        }
-
-
+        overlay.text = textToDisplay;
 
 
         /*
@@ -175,5 +154,5 @@ public class OverlayFeed : MonoBehaviour
 
         */
     }
-
+    
 }
