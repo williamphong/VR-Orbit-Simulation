@@ -42,7 +42,16 @@ namespace Valve.VR.InteractionSystem
 			{
 				currentLinearMapping = linearMapping.value;
 
-				simuControl.simulationSpeed = linearMapping.value * 20;
+				if (currentLinearMapping != 0)
+				{
+                    simuControl.simulationSpeed = Mathf.Pow(500f, linearMapping.value - 0.5f);
+                }
+				
+				else
+				{
+					simuControl.simulationSpeed = 0;
+				}
+
 
 
 				framesUnchanged = 0;

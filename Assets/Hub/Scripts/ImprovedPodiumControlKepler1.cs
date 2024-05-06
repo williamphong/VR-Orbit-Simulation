@@ -5,8 +5,6 @@ namespace Valve.VR.InteractionSystem.Sample
 {
     public class Lecture1Button : MonoBehaviour
     {
-        public HoverButton hoverButton;
-
         public GameObject masterControl;
         SimulationController simuControl;
 
@@ -19,16 +17,12 @@ namespace Valve.VR.InteractionSystem.Sample
         Renderer orbitRender;
 
         bool lectureOn = false;
-        Vector3 playerPositionStorage;
-        Vector3 podiumPositionStorage;
         float speedStorage;
 
         public GameObject tvScreen; // Mapped to the TV Screen In-Game
 
         private void Start()
         {
-            hoverButton.onButtonDown.AddListener(OnButtonDown);
-
             simuControl = masterControl.GetComponent<SimulationController>();
             lecturer = GetComponent<AudioSource>();
             focusRender = focusModel.GetComponent<Renderer>();
@@ -39,7 +33,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         }
 
-        private void OnButtonDown(Hand hand)
+        public void ToggleLecture()
         {
             if (lectureOn == false)
             {
