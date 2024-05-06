@@ -13,55 +13,44 @@ namespace Valve.VR.InteractionSystem
 	public class PlanetHandler : MonoBehaviour
 	{
 		public LinearMapping linearMapping;
-        public GameObject masterControl;
-        SimulationController simuControl;
+		public GameObject masterControl;
+		SimulationController simuControl;
 
-        private float currentLinearMapping = float.NaN;
-		private int framesUnchanged = 0;
+		private float currentLinearMapping = 0.5f;
 
 
 		//-------------------------------------------------
 		void Awake()
 		{
-			if (simuControl == null )
+			if (simuControl == null)
 			{
-					simuControl = masterControl.GetComponent<SimulationController>(); ;
+				simuControl = masterControl.GetComponent<SimulationController>(); ;
 			}
 
-			if ( linearMapping == null )
+			if (linearMapping == null)
 			{
 				linearMapping = GetComponent<LinearMapping>();
 			}
+
+			simuControl.simulationSpeed = 1f;
 		}
 
 
 		//-------------------------------------------------
 		void Update()
 		{
-			if ( currentLinearMapping != linearMapping.value )
+			if (currentLinearMapping != linearMapping.value)
 			{
 				currentLinearMapping = linearMapping.value;
 
 				if (currentLinearMapping != 0)
 				{
-                    simuControl.simulationSpeed = Mathf.Pow(500f, linearMapping.value - 0.5f);
-                }
-				
+					simuControl.simulationSpeed = Mathf.Pow(500f, linearMapping.value - 0.5f);
+				}
+
 				else
 				{
 					simuControl.simulationSpeed = 0;
-				}
-
-
-
-				framesUnchanged = 0;
-			}
-			else
-			{
-				framesUnchanged++;
-				if ( framesUnchanged > 2 )
-				{
-					//animator.enabled = false;
 				}
 			}
 		}
