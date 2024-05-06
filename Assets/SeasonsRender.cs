@@ -72,9 +72,9 @@ public class SeasonsRender : MonoBehaviour
             summerSet = false;
             autumnSet = false;
             winter.emitting = false;
-            autumn.emitting = true;
+            autumn.emitting = false;
             summer.emitting = false;
-            spring.emitting = false;
+            spring.emitting = true;
         }
         else if (isSummer && !summerSet)
         {
@@ -94,9 +94,9 @@ public class SeasonsRender : MonoBehaviour
             summerSet = false;
             autumnSet = true;
             winter.emitting = false;
-            autumn.emitting = false;
+            autumn.emitting = true;
             summer.emitting = false;
-            spring.emitting = true;
+            spring.emitting = false;
         }
     }
 }
