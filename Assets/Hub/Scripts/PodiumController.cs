@@ -43,7 +43,7 @@ namespace Valve.VR.InteractionSystem.Sample
         {
             if (cooldown < Time.time)
             {
-                cooldown = Time.time + 0.3f;
+                cooldown = Time.time + 1f;
                 if (lectureOn == false)
                 {
                     earthViewCam.SetActive(true);
@@ -66,7 +66,7 @@ namespace Valve.VR.InteractionSystem.Sample
         {
             if (cooldown < Time.time)
             {
-                cooldown = Time.time + 0.3f;
+                cooldown = Time.time + 1f;
                 if (lectureOn == false)
                 {
                     speedStorage = simuControl.simulationSpeed;
@@ -98,7 +98,7 @@ namespace Valve.VR.InteractionSystem.Sample
         {
             if (cooldown < Time.time)
             {
-                cooldown = Time.time + 0.3f;
+                cooldown = Time.time + 1f;
                 if (lectureOn == false)
                 {
                     speedStorage = simuControl.simulationSpeed;
@@ -128,7 +128,7 @@ namespace Valve.VR.InteractionSystem.Sample
         {
             if (cooldown < Time.time)
             {
-                cooldown = Time.time + 0.3f;
+                cooldown = Time.time + 1f;
                 if (lectureOn == false)
                 {
                     speedStorage = simuControl.simulationSpeed;

@@ -38,7 +38,7 @@ public class OverlayFeed : MonoBehaviour
     private string textToDisplay = "";
     public TMP_Text overlay;
 
-    public Modular3DText timeDisplay;
+    public TMP_Text timeDisplay;
 
     public GameObject masterControl;
     SimulationController simuControl;
@@ -50,7 +50,7 @@ public class OverlayFeed : MonoBehaviour
 
     void Update()
     {
-        timeDisplay.UpdateText("Current Date: " + simuControl.dateRead());
+        timeDisplay.text = "<b>Current Date: " + simuControl.dateRead() + "</b>";
 
         if (year != simuControl.getYear())
         {
