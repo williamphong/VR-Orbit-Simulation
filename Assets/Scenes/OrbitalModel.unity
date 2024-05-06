@@ -2232,7 +2232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.365, y: 0.399}
+  m_AnchoredPosition: {x: 0.365, y: 0.367}
   m_SizeDelta: {x: 10, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &525300761
@@ -2255,10 +2255,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nBerger's Solution\nEccentricity (dimensionless): 0.0167158312856687\nObliquity
-    (degrees): 23.4436698959509\nLongitude of Perihelion (degrees): 102.38159851428\n\nNorthern
-    Hemisphere Seasons Lengths (days) \nSpring Length: 92.763148523975\nSummer Length:
-    93.6534412347575\nFall Length: 89.8437957685966\nWinter Length: 88.9959774726709\n"
+  m_text: "<b>Berger's Solution</b>\n    Eccentricity: 0.0167\n    Longitude of Perihelion:
+    102.381599\xB0\n    Obliquity: 23.44367\xB0\n\n<b>Northern Hemisphere Seasons
+    Lengths</b>\n    Spring Length: 92.76315 days\n    Summer Length: 93.65344 days\n   
+    Fall Length: 89.8438 days\n    Winter Length: 88.99598 days\n\n<b>Keplerian Parameters</b>\n   
+    Keplerian mean anomaly: 0\xB0\n    Inverse Keplerian true anomaly: 4.43333344466743E-17\xB0\n   
+    True solar longitude: 102.38159851428"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
