@@ -26,12 +26,22 @@ public class SimulationController : MonoBehaviour
 
     public string dateRead()
     {
-        return TimeConverter.FromFloat((double)currentTime, true);
+        return TimeConverter.FromFloat((double)currentTime + 186, true);
+    }
+
+    public int getDay()
+    {
+        DateTime epoch = new DateTime(1970, 7, 5);
+        DateTime resultDateTime;
+
+        resultDateTime = epoch.AddDays(currentTime);
+
+        return resultDateTime.DayOfYear;
     }
 
     public int getYear(bool isDays = true)
     {
-        DateTime epoch = new DateTime(1970, 1, 1);
+        DateTime epoch = new DateTime(1970, 7, 5);
         DateTime resultDateTime;
 
         if (isDays)

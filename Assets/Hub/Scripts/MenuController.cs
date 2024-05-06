@@ -11,6 +11,7 @@ public class MenuController : MonoBehaviour
     private float toggleCooldown = 0f;
     public bool UIToggled = false;
     public GameObject trail;
+
     public GameObject earthLatLong;
 
     public Transform hubSpot;
