@@ -1,5 +1,5 @@
-# CS490 Capstone Project: VR Orbit
-An educational VR demo focusing on Earth's orbit and Kepler's Laws of Planetary Motion. This project was written in C# and developed in Unity. 
+# VR Orbit Simualation
+An educational VR demo focusing on Earth's orbit and Kepler's Laws of Planetary Motion. This project was created in C#, Unity, and developed for the CS490 Capstone Project. 
 
 ## Main features
 - Mathematically correct orbits
